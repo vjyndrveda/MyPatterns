@@ -1,7 +1,44 @@
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
-        pattern13(5);
+        pattern15(5);
+    }
+
+    static void pattern15(int n) {
+        for (int row = 1; row <= 2 * n - 1; row++) {
+
+            int spacePrint = row >= n ? row - n + 1 : n - row + 1;
+            int starPrint = row > n ? 2 * n - 2 * (row - n) - 1 : 2 * row - 1;
+            for (int col = 1; col <= spacePrint; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= starPrint; col++) {
+                if (col == 1 || col == starPrint) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
+    }
+
+    static void pattern14(int n) {
+        for (int row = 1; row <= n; row++) {
+            for (int col = 1; col <= row; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= 2 * n - 2 * row + 1; col++) {
+                if (col == 1 || row == 1 || col == 2 * n - 2 * row + 1) {
+                    System.out.print("*");
+                } else {
+                    System.out.print(" ");
+                }
+            }
+            System.out.println();
+        }
+
     }
 
     static void pattern13(int n) {
