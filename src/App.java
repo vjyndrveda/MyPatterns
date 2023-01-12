@@ -21,7 +21,6 @@ public class App {
             }
             System.out.println();
         }
-
     }
 
     static void pattern14(int n) {
@@ -38,7 +37,6 @@ public class App {
             }
             System.out.println();
         }
-
     }
 
     static void pattern13(int n) {
@@ -55,7 +53,6 @@ public class App {
             }
             System.out.println();
         }
-
     }
 
     static void pattern12(int n) {
