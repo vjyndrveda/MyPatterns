@@ -1,7 +1,67 @@
 public class App {
     public static void main(String[] args) throws Exception {
         System.out.println("Hello, World!");
-        pattern16(5);
+        pattern19(5);
+    }
+
+    static void pattern19(int n) {
+        for (int row = 1; row <= 2 * n; row++) {
+
+            int emptySpaces = row > n ? 2 * n - row : row;
+            int printBackward = row > n ? row - n : n - row;
+            for (int col = 1; col <= emptySpaces; col++) {
+                System.out.print("*");
+            }
+            for (int col = 1; col <= printBackward; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= printBackward; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= emptySpaces; col++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern18(int n) {
+        for (int row = 1; row <= 2 * n - 1; row++) {
+
+            int emptySpaces = row > n ? row - n + 1 : n - row + 1;
+            int printBackward = row > n ? 2 * n - row : row;
+            for (int col = 1; col <= emptySpaces; col++) {
+                System.out.print("*");
+            }
+            for (int col = printBackward; col > 1; col--) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col < printBackward; col++) {
+                System.out.print(" ");
+            }
+            for (int col = 1; col <= emptySpaces; col++) {
+                System.out.print("*");
+            }
+            System.out.println();
+        }
+    }
+
+    static void pattern17(int n) {
+        for (int row = 1; row <= 2 * n; row++) {
+
+            int emptySpaces = row > n ? row - n : n - row;
+            int printBackward = row > n ? 2 * n - row : row;
+            for (int col = 1; col <= emptySpaces; col++) {
+                System.out.print(" ");
+            }
+            for (int col = printBackward; col >= 1; col--) {
+                System.out.print(col);
+            }
+            for (int col = 2; col <= printBackward; col++) {
+                System.out.print(col);
+            }
+            System.out.println();
+        }
     }
 
     static void pattern16(int n) {
@@ -11,7 +71,7 @@ public class App {
                 System.out.print(" ");
             }
             int number = 1;
-            for (int col = 0; col <= row; col++) {
+            for (int col = row; col <= 1; col--) {
                 System.out.print("   " + number);
                 number = number * (row - col) / (col + 1);
             }
